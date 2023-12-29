@@ -39,7 +39,7 @@ const Footer = () => {
   };
   return (
     <>
-      <h2 className="head-text">Chat with me</h2>
+      <h2 className="head-text">Contact with me</h2>
 
       <div className="app__footer-cards">
         <div className="app__footer-card">
@@ -50,9 +50,14 @@ const Footer = () => {
         </div>
 
         <div className="app__footer-card">
-          <img src={images.mobile} alt="mobile" />
-          <a href="tel: +84 395418002" className="p-text">
-            +84 395418002
+          <img src={images.facebook} alt="mobile" />
+          <a
+            href="https://www.facebook.com/tuan.phanngoc.311/?locale=vi_VN"
+            target="_blank"
+            rel="noreferrer"
+            className="p-text"
+          >
+            Facebook
           </a>
         </div>
       </div>

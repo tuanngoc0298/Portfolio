@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { AppWrap } from "../../wrapper";
 import { images } from "../../constants";
+import { TypeAnimation } from "react-type-animation";
 import "./Header.scss";
 
 const scaleVariants = {
@@ -26,12 +27,18 @@ const Header = () => {
           <div className="badge-cmp app__flex">
             <span>👋</span>
             <div style={{ marginLeft: 20 }}>
-              <p className="p-text">Hello, I am</p>
-              <h1 className="head-text">Tuan</h1>
+              <p className="p-text p-welcome">Hello, I'm</p>
+              <TypeAnimation
+                sequence={["Tuan", 2000, "Web Developer", 2000]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+                className="head-text"
+              />
             </div>
           </div>
           <div className="tag-cmp app__flex">
-            <p className="p-text">Frontend Web Developer</p>
+            <p className="p-text p-welcome">Welcome to my porfolio</p>
           </div>
         </div>
       </motion.div>
@@ -57,9 +64,14 @@ const Header = () => {
         className="app__header-circles"
       >
         {[images.reactQuery, images.redux, images.sass].map((circle, index) => (
-          <div className="circle-cmp app__flex" key={`circle-${index}`}>
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.2 }}
+            className="circle-cmp app__flex"
+            key={`circle-${index}`}
+          >
             <img src={circle} alt="circle" />
-          </div>
+          </motion.div>
         ))}
       </motion.div>
     </div>

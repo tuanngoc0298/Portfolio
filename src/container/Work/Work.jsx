@@ -15,19 +15,31 @@ const Work = () => {
   const [filterWork, setFilterWork] = useState([]);
 
   useEffect(() => {
-    const query = "*[_type == 'works']";
+    const query = "*[_type == 'works'] | order(_createdAt asc)";
     client.fetch(query).then((data) => {
       setWorks(data);
       setFilterWork(data);
     });
   }, []);
 
-  const handleWorkFilter = (item) => {};
+  const handleWorkFilter = (item) => {
+    setActiveFilter(item);
+    setAnimateCard([{ y: 100, opacity: 0 }]);
+
+    setTimeout(() => {
+      setAnimateCard([{ y: 0, opacity: 1 }]);
+      if (item === "All") {
+        setFilterWork(works);
+      } else {
+        setFilterWork(works.filter((work) => work.tags.includes(item)));
+      }
+    }, 500);
+  };
   return (
     <>
       <h2 className="head-text">
-        My Creative <span>Portfolio </span>
-        section
+        My Creative <span>Projects </span>
+        Section
       </h2>
       <div className="app__work-filter">
         {["All", "Web App", "LandingPage", "Small App"].map((item, index) => (

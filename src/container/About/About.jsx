@@ -1,32 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { images } from "../../constants";
+
 import { AppWrap, MotionWrap } from "../../wrapper";
 
 import "./About.scss";
 import { urlFor, client } from "../../client";
-const abouts = [
-  {
-    title: "Web Development",
-    description: "I am a web developer",
-    imgUrl: images.about01,
-  },
-  {
-    title: "Frontend Development",
-    description: "I am a web developer",
-    imgUrl: images.about02,
-  },
-  {
-    title: "Web Development",
-    description: "I am a web developer",
-    imgUrl: images.about03,
-  },
-  {
-    title: "Web Development",
-    description: "I am a web developer",
-    imgUrl: images.about04,
-  },
-];
+
 const About = () => {
   const [abouts, setAbouts] = useState([]);
   useEffect(() => {
@@ -38,8 +17,7 @@ const About = () => {
   return (
     <>
       <h2 className="head-text">
-        I Know That <span>Good Apps</span>
-        <br /> means <span>Good Business</span>
+        About <span>Me</span>
       </h2>
 
       <div className="app__profiles">

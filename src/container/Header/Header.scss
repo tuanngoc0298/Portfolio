@@ -55,25 +55,40 @@
 
   .badge-cmp,
   .tag-cmp {
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     border: var(--white-color);
     border-radius: 15px;
     flex-direction: row;
-    width: auto;
+    width: 19rem;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    justify-content: flex-start;
   }
 
   .tag-cmp {
     flex-direction: column;
     margin-top: 3rem;
     p {
+      font-size: 1.3rem;
+
       width: 100%;
       text-transform: uppercase;
-      text-align: right;
+      text-align: center;
     }
   }
+  .p-welcome {
+    font-weight: 900;
+    font-size: 2.3rem;
+    background: -webkit-linear-gradient(
+      225deg,
+      #ff3cac 0%,
+      #784ba0 50%,
+      #2b86c5 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   span {
-    font-size: 2.5rem;
+    font-size: 1.6rem;
     @media screen and (min-width: 2000px) {
       font-size: 5rem;
     }
